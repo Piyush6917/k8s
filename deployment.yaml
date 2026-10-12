@@ -1,1 +1,33 @@
 
+
+# Kubernetes API version
+apiVersion: apps/v1
+
+# Resource type
+kind: Deployment
+
+# Deployment details
+metadata:
+  name: nginx-deployment
+
+# Desired configuration
+spec:
+  replicas: 3  # Create 3 Pods
+
+  # Select Pods using this label
+  selector:
+    matchLabels:
+      app: nginx
+
+  # Pod configuration
+  template:
+    metadata:
+      labels:
+        app: nginx
+
+    spec:
+      containers:
+        - name: ig_trial
+          image: public.ecr.aws/i1c9y2i7/ig_trial:latest  # Docker image
+          ports:
+            - containerPort: 5000  # Application port
