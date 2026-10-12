@@ -26,6 +26,6 @@ spec:
     spec:
       containers:
         - name: ig-trial
-          image: public.ecr.aws/i1c9y2i7/ig_trial:latest  # Docker image
+          image: nginx:latest  # Docker image
           ports:
             - containerPort: 5000  # Application port
